@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Mouse Sensitivity 3D"
+config/name="Mouse Sensitivity cm/360"
 run/main_scene="uid://dr36uiotdt6wn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
