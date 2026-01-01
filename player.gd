@@ -18,12 +18,12 @@ func body_rotation(event: InputEvent) -> void:
 		self.rotation.y = wrapf(self.rotation.y, deg_to_rad(0.0), deg_to_rad(360.0))
 
 
-func get_head_rotation(event: InputEvent) -> void:
+func camera_rotation(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		head_rotation.x -= event.relative.y * deg_to_rad(deg_per_mouse_count)
+		%Camera3D.rotation.x -= event.relative.y * deg_to_rad(deg_per_mouse_count)
 
-		head_rotation.x = clampf(head_rotation.x, -deg_to_rad(head_rotation_limit), deg_to_rad(head_rotation_limit))
-
+		%Camera3D.rotation.x = clampf(%Camera3D.rotation.x, -deg_to_rad(head_rotation_limit), deg_to_rad(head_rotation_limit))
+	
 func _ready():
 	var counts_per_cm := base_dpi / CM_PER_INCH
 
@@ -34,4 +34,4 @@ func _ready():
 
 func _input(event: InputEvent) -> void:
 	body_rotation(event)
-	get_head_rotation(event)
+	camera_rotation(event)
