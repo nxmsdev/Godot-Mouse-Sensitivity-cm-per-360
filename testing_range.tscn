@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://dr36uiotdt6wn"]
+
+[ext_resource type="PackedScene" uid="uid://dsapgrcp3gein" path="res://player.tscn" id="1_s2prf"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4xowi"]
+size = Vector2(5, 5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_a202f"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_noarx"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_a0tk4"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_r3fl7"]
+
+[node name="Testing Range" type="Node3D"]
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects"]
+mesh = SubResource("PlaneMesh_4xowi")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7463634, 1, -2.557483)
+mesh = SubResource("CylinderMesh_a202f")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.782336, 1, 1.5475719)
+mesh = SubResource("BoxMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.217664, 1, -2.452428)
+mesh = SubResource("PrismMesh_a0tk4")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9376957, 1.1227212, 1.9970825)
+mesh = SubResource("SphereMesh_r3fl7")
+skeleton = NodePath("../..")
+
+[node name="Player" parent="." instance=ExtResource("1_s2prf")]
