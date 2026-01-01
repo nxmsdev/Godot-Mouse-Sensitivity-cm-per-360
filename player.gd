@@ -2,9 +2,8 @@ extends CharacterBody3D
 
 @export_category("Mouse Movement")
 @export var mouse_sensitivity: float = 12.192
-
-@export var head_rotation_limit: float = 90.0
 @export var base_dpi := 1600.0
+@export var head_rotation_limit: float = 90.0
 
 const CM_PER_INCH := 2.54
 
